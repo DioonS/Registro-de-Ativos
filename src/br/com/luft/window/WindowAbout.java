@@ -1,2 +1,7 @@
-package br.com.luft.window;public class WindowAbout {
+package br.com.luft.window;
+
+import javax.swing.*;
+
+public class WindowAbout {
+    private JPanel tblabout;
 }
