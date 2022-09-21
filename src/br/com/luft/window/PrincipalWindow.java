@@ -122,6 +122,16 @@ public class PrincipalWindow extends javax.swing.JFrame {
         //about.setVisible(true);
     }
 
+<<<<<<< HEAD
+=======
+    private void exitActionPerformed(ActionEvent evt) {
+        // exibe uma caixa de dialogo
+        int sair = JOptionPane.showConfirmDialog(null, "Tem certeza que deseja sair ?" + "Atenção" + JOptionPane.YES_NO_OPTION);
+        if (sair == JOptionPane.YES_OPTION) {
+            System.exit(0);
+        }
+    }
+>>>>>>> 0105043284f6ad92f3492e1de8168570872a5585
 
     private void formWindowActivated (JLabel evt) {
         // o codigo a baixo substitui a label data pela data atual ao inicializar
