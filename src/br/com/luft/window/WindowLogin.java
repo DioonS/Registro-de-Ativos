@@ -37,11 +37,14 @@ public class WindowLogin extends javax.swing.JFrame{
                     principal.setVisible(true);
                     // PrincipalWindow.addDelete.SetEnabled(true); // ESSE CODIGO TA COM ERRO POIS NAO CONSEGUE ENCONTRAR O ADDDELETE VARIAVEL
                     // PrincipalWindow.setTxtUsuario(rs.getString(2)); //ESSE AQUI DA ERRO DE TEMPO LIMITE
+                    // PrincipalWindow.txtUsuario.setForeground(Color.RED);
                     this.dispose();
                     conexao.close();
                 } else {
                     PrincipalWindow principal = new PrincipalWindow();
                     principal.setVisible(true);
+                    PrincipalWindow.txtUsuario.setText(rs.getString(2));
+                    PrincipalWindow.txtUsuario.setForeground(Color.BLUE);
                     this.dispose();
                 }
             } else {
