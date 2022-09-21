@@ -22,14 +22,28 @@ public class WindowLogin extends javax.swing.JFrame{
             pst = conexao.prepareStatement(sql);
             pst.setString(1, txtUsuario.getText());
             pst.setString(2, txtSenha.getText());
+
             // a linha a baixo executa a query
             rs = pst.executeQuery();
+
             // se existir usuario e senha correspondente
             if (rs.next()) {
-                PrincipalWindow principal = new PrincipalWindow();
-                principal.setVisible(true);
-                this.dispose();
-                conexao.close();
+                // A linha abaixo obtem o conteudo do campo perfil da tabela usuario (Banco de dados)
+                String perfil = rs.getString(6);
+                //System.out.println(perfil); //Testando nivel do usuario
+                // A estrutura abaixo fa o tratamento do perfil do usuario
+                if (perfil.equals("Administrador")) {
+                    PrincipalWindow principal = new PrincipalWindow();
+                    principal.setVisible(true);
+                    // PrincipalWindow.addDelete.SetEnabled(true); // ESSE CODIGO TA COM ERRO POIS NAO CONSEGUE ENCONTRAR O ADDDELETE VARIAVEL
+                    // PrincipalWindow.setTxtUsuario(rs.getString(2)); //ESSE AQUI DA ERRO DE TEMPO LIMITE
+                    this.dispose();
+                    conexao.close();
+                } else {
+                    PrincipalWindow principal = new PrincipalWindow();
+                    principal.setVisible(true);
+                    this.dispose();
+                }
             } else {
                 JOptionPane.showMessageDialog(null, "Usuário e/ou Senha inválido!");
             }

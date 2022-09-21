@@ -65,6 +65,9 @@
               <foreground color="-6050380"/>
               <text value="USUARIO"/>
             </properties>
+            <clientProperties>
+              <html.disable class="java.lang.Boolean" value="false"/>
+            </clientProperties>
           </component>
           <component id="80c7d" class="javax.swing.JLabel" binding="txtData">
             <constraints>
